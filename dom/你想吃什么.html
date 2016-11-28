@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<style>
+	#box{ width: 1000px; height:800px;background: yellow;margin: 0 auto;}
+	#txt{text-align:center;line-height: 500px;font-size: 34px;}
+	#btn1{width: 100px;height: 100px;background: red;color: blue;float: left;margin-left: 200px;font-size: 24px;}
+	#btn2{width: 100px;height: 100px;background: red;color: blue;float: right;margin-right: 200px;font-size: 24px;}
+</style>
+<body>
+	
+<div id="box">
+	<div id="txt">神户牛排</div>
+	<input id="btn1" type="button"value="开始"/>
+	<input id="btn2" type="button"value="停止"/>
+
+</div>
+
+	<script>
+	var txt=document.getElementById('txt');
+	var box=document.getElementById('box');
+	var btn1=document.getElementById('btn1');
+	var btn2=document.getElementById('btn2');
+	i=0;
+		btn1.onclick=function () {
+			tt=setInterval(change,30);
+		}
+		function change(){
+			var arr=["82年拉菲","金丝大虾","波士顿龙虾","紫金虾肉卷","紫薯蓝莓芝多士","帝王蟹",
+			"三文鱼刺身","海参汤"];
+			txt.innerHTML=arr[i];
+			i++;
+			if (i>arr.length-1) {
+				i=0;
+				btn1.disabled=true;
+				btn1.style.color='black';
+			}
+		}
+		btn2.onclick = function(){
+
+	clearInterval(tt);
+		btn1.disabled=false;
+
+}
+
+
+	</script>
+</body>
+
+
+</html>
